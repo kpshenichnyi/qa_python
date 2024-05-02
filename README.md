@@ -1,9 +1,9 @@
 # qa_python
 
 # ФИКСТУРЫ
-    # collector_without_books: фикстура с созданием объекта класса BooksCollector
+    # collector_books: фикстура с созданием объекта класса BooksCollector
 
-    # collector_one_book: фикстура со списком из одной книги
+    # add_one_book_collector_books: фикстура добавления одной книги
     # 'Преступление и наказание'
 
     # collector_list_books_all_genre: фикстура со списком книг по каждому жанру
