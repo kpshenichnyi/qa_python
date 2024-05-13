@@ -64,9 +64,9 @@ class TestBooksCollector:
     def test_get_book_genre_get_genre_to_list_books(self, collector_books, name, genre):
         collector_books.add_new_book(name)
         collector_books.set_book_genre(name, genre)
-        collector_books.get_book_genre(name)
+        book_genre = collector_books.get_book_genre(name)
 
-        assert collector_books.get_book_genre(name) == genre
+        assert book_genre == genre
 
     # тест возврата списка книг только указанного в параметрах жанра
     @pytest.mark.parametrize('genre', ['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии'])
@@ -81,11 +81,13 @@ class TestBooksCollector:
 
     # тест на возврат словаря без единой книги
     def test_get_books_genre_get_dictionary_without_books(self, collector_books):
-        assert collector_books.get_books_genre() == {}
+        dic_book_genre = collector_books.get_books_genre()
+        assert dic_book_genre == {}
 
     # тест на возврат словаря из одной книги без жанра
     def test_get_books_genre_get_dictionary_one_book(self, collector_books, add_one_book_collector_books):
-        assert collector_books.get_books_genre() == {"Преступление и наказание": ''}
+        dic_book_genre = collector_books.get_books_genre()
+        assert dic_book_genre == {"Преступление и наказание": ''}
 
     # тест возврата сформированного словаря со множеством книг и жанров
     def test_get_books_genre_get_dictionary_all_books_all_genre(self, collector_books, collector_list_books_all_genre):
